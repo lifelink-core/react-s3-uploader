@@ -69,6 +69,7 @@ S3Upload.prototype.executeOnSignedUrl = function(file, callback) {
             queryString += '&' + key + '=' + val;
         });
     }
+    debugger
     xhr.open('GET', this.signingUrl + queryString, true);
     if (this.signingUrlHeaders) {
         var signingUrlHeaders = this.signingUrlHeaders;

@@ -16,6 +16,7 @@ From Browser
     ...
 
     <ReactS3Uploader
+        host="http://localhost:3000"
         signingUrl="/s3/sign"
         accept="image/*"
         onProgress={this.onUploadProgress}
@@ -35,6 +36,8 @@ to PUT the file in S3.
 the `Content-Disposition` header will be set accordingly with the file's original filename.
 If it is `auto`, the disposition type will be set to `inline` for images and `attachment` for
 all other files.
+
+`host` is optional host to insert before requests.
 
 The resulting DOM is essentially:
 
