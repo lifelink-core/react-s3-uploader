@@ -111,6 +111,7 @@ S3Upload.prototype.uploadToS3 = function(file, signResult) {
             }
         }.bind(this);
         xhr.onerror = function() {
+            debugger
             return this.onError('XHR error', file);
         }.bind(this);
         xhr.upload.onprogress = function(e) {
