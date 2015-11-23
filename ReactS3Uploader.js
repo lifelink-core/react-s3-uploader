@@ -7,15 +7,15 @@ var React = require('react'),
 var ReactS3Uploader = React.createClass({
 
     propTypes: {
-        baseUrl: React.PropTypes.string,
+        baseUrl: React.PropTypes.string.isRequired,
         signingUrl: React.PropTypes.string.isRequired,
         onProgress: React.PropTypes.func,
         onFinish: React.PropTypes.func,
         onError: React.PropTypes.func,
-        signingUrlHeaders: React.PropTypes.object,
-        signingUrlQueryParams: React.PropTypes.object,
+        signingUrlHeaders: React.PropTypes.object.isRequired,
+        signingUrlQueryParams: React.PropTypes.object.isRequired,
         uploadRequestHeaders: React.PropTypes.object,
-        contentDisposition: React.PropTypes.string
+        contentDisposition: React.PropTypes.string.isRequired
     },
 
     getDefaultProps: function() {
