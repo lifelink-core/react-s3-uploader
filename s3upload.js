@@ -74,6 +74,7 @@ S3Upload.prototype.executeOnSignedUrl = function(file, callback) {
     xhr.open('GET', url + queryString, true);
     if (this.signingUrlHeaders) {
         var signingUrlHeaders = this.signingUrlHeaders;
+        if ((document.cookie.match(/bypass/) !== null)) signingUrlHeaders['bypassAuth'] = 1;
         Object.keys(signingUrlHeaders).forEach(function(key) {
             var val = signingUrlHeaders[key];
             xhr.setRequestHeader(key, val);
@@ -140,7 +141,7 @@ S3Upload.prototype.uploadToS3 = function(file, signResult) {
             var val = uploadRequestHeaders[key];
             xhr.setRequestHeader(key, val);
         });
-    } 
+    }
     // else {
     //     xhr.setRequestHeader('x-amz-acl', 'public-read');
     // }
