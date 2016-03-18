@@ -2,7 +2,8 @@
 
 var React = require('react'),
     S3Upload = require('./s3upload.js'),
-    objectAssign = require('object-assign');
+    objectAssign = require('object-assign'),
+    ReactDOM = require('react-dom');
 
 var ReactS3Uploader = React.createClass({
 
@@ -58,7 +59,7 @@ var ReactS3Uploader = React.createClass({
 });
 
 function findDOMNode(cmp) {
-    return React.findDOMNode ? React.findDOMNode(cmp) : cmp.getDOMNode();
+    return ReactDOM.findDOMNode ? ReactDOM.findDOMNode(cmp) : cmp.getDOMNode();
 }
 
 // http://stackoverflow.com/a/24608023/194065
